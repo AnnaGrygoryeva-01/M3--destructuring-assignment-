@@ -47,9 +47,63 @@ let user = {
 };
 
 // За допомогою деструктуризації дістати з об'єкту слідуючі данні і покласти їх у змінні з відповідними іменами:
-// university,
-// city,
-// latitude,
-// пошту з назвою userEmail,
-// друге хобі з назвою secondHobbie,
-// ім'я першої дитини з назвою firstChildName
+// // university,
+// const {
+//   education: { university },
+// } = user;
+// console.log(university);
+
+// // city,
+// const {
+//   address: { city },
+// } = user;
+// console.log(city);
+
+// // latitude,
+// const {
+//   address: {
+//     coordinates: { latitude },
+//   },
+// } = user;
+// console.log(latitude);
+
+// // пошту з назвою userEmail,
+// const {
+//   contacts: { email: userEmail },
+// } = user;
+// console.log(userEmail);
+
+// // друге хобі з назвою secondHobbie,
+// const {
+//   hobbies: [, secondHobbie],
+// } = user;
+// console.log(secondHobbie);
+
+// // ім'я першої дитини з назвою firstChildName
+// const {
+//   family: {
+//     children: [{ name: firstChildName }],
+//   },
+// } = user;
+// console.log(firstChildName);
+
+// or:
+const {
+  education: { university },
+  address: {
+    city,
+    coordinates: { latitude },
+  },
+  contacts: { email: userEmail },
+  hobbies: [, secondHobbie],
+  family: {
+    children: [{ name: firstChildName }],
+  },
+} = user;
+
+console.log(university);
+console.log(city);
+console.log(latitude);
+console.log(userEmail);
+console.log(secondHobbie);
+console.log(firstChildName);
